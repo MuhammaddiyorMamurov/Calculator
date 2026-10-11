@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;          /* height emas, min-height */
+    padding: 10px;              /* chetlarida bo'sh joy qolsin */
+    box-sizing: border-box;
+    background-color: hsl(0, 0%, 95%);
+}
+
+#calculator{
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 15px;
+    width: 100%;                /* ekranga moslashadi */
+    max-width: 500px;           /* lekin 500px dan oshmaydi */
+    overflow: hidden;
+}
+
+#display{
+    width: 100%;
+    padding: clamp(10px, 4vw, 20px);
+    font-size: clamp(2rem, 10vw, 5rem);
+    text-align: left;
+    border: none;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    box-sizing: border-box;     /* padding kenglikni oshirib yubormasligi uchun */
+}
+
+#keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(6px, 2vw, 10px);
+    padding: clamp(10px, 4vw, 25px);
+}
+
+button{
+    width: 100%;                /* katak ichiga to'liq sig'adi */
+    aspect-ratio: 1 / 1;        /* doim kvadrat, balandlik avtomatik */
+    border-radius: 50%;         /* 50px emas, doim doira */
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    font-size: clamp(1.5rem, 6vw, 3rem);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: hsl(0, 0%, 40%);
+}
+button:active{
+    background-color: hsl(0, 0%, 50%);
+}
+
+.operator-btn{
+    background-color: hsl(35, 100%, 55%);
+}
+.operator-btn:hover{
+    background-color: hsl(35, 100%, 65%);
+}
+.operator-btn:active{
+    background-color: hsl(35, 100%, 75%);
+}
+
+@media (max-width: 360px){
+    #keys{
+        padding: 8px;
+        gap: 5px;
+    }
+    button{
+        font-size: 1.3rem;
+    }
+}
